@@ -45,14 +45,14 @@ export const siteConfig: SiteConfig = {
 	title: "暴雨心奴",
 
 	// 站点副标题
-	subtitle: "随笔记录",
+	subtitle: "个人小站",
 
 	// 站点 URL
 	site_url: "https://baoyux1nnu.com",
 
 	// 站点描述
 	description:
-		"我的第一个博客，用来记录想记录的事情",
+		"随便记录一些东西",
 
 	// 站点关键词
 	keywords: [
