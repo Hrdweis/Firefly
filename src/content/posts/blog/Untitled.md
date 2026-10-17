@@ -10,3 +10,4 @@ category: 试验
 draft: false
 ---
 ## 这是测试
+![爱丽丝镜城.jpg](https://tu.baoyux1nnu.com/file/blog/wenzhang/1792252327901_爱丽丝镜城.jpg)
