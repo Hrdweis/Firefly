@@ -1,6 +1,6 @@
 ---
-title: 我的第一篇博客文章
-published: 2026-10-16
+title: 我的第一篇文章
+published: 2026-10-17
 description: 这是我新博客的第一篇文章。
 image: ./cover.jpg
 tags:
@@ -9,9 +9,4 @@ tags:
 category: 试验
 draft: false
 ---
-
-
-## 🌟 项目概述
-**第一篇文章测试**
-如果成功就睡觉！
-
+## 这是测试
