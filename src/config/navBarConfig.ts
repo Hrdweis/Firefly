@@ -36,51 +36,20 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		],
 	});
 
-	//社交及其子菜单
-	links.push({
-		name: "社交",
-		url: "#",
-		icon: "material-symbols:group",
-		children: [
-			// 友链
-			LinkPresets.Friends,
+	//友链
+	links.push(LinkPresets.Friends);
 
-			// 留言
-			LinkPresets.Guestbook,
-		],
-	});
+	//动态
+	links.push(LinkPresets.Dynamic);
 
-	// 我的及其子菜单
-	links.push({
-		name: "我的",
-		url: "#",
-		icon: "material-symbols:person",
-		children: [
-			// 动态
-			LinkPresets.Dynamic,
+	//相册
+	links.push(LinkPresets.Gallery);
 
-			// 项目
-			LinkPresets.Projects,
+	//网址导航
+	links.push(LinkPresets.Booknav);
 
-			// 相册
-			LinkPresets.Gallery,
-
-			// 书签导航
-			LinkPresets.Booknav,
-
-			// 哔哩哔哩追番
-			LinkPresets.Bilibili,
-
-			// 番组计划
-			LinkPresets.Bangumi,
-
-			// VNDB
-			LinkPresets.VNDB,
-
-			// MyAnimeList
-			LinkPresets.MAL,
-		],
-	});
+	//Bilibili追番
+	links.push(LinkPresets.Bilibili);
 
 	// 关于及其子菜单
 	links.push({
@@ -195,13 +164,13 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		pageKey: "gallery",
 	},
 	Booknav: {
-		name: "书签导航",
+		name: "网址导航",
 		url: "/booknav/",
 		icon: "material-symbols:bookmarks",
 		pageKey: "booknav",
 	},
 	Bilibili: {
-		name: "哔哩哔哩",
+		name: "追番",
 		url: "/bilibili/",
 		icon: "fa7-brands:bilibili",
 		pageKey: "bilibili",
@@ -231,7 +200,7 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		pageKey: "sponsor",
 	},
 	About: {
-		name: "关于我",
+		name: "关于",
 		url: "/about/",
 		icon: "material-symbols:person",
 	},
