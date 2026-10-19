@@ -723,3 +723,22 @@ a.card-wiki-link
 
   > :last-child
     margin-bottom: 0
+
+// ─── 诗词排版（<div class="poem">） ─────────────────────────────────────────
+// 用法：<div class="poem">首句……\n次句……</div>
+// 源码里的换行直接变成排版换行，空行表示上下片/分段间隔。
+
+.custom-md .poem
+  margin: 1.5rem 0
+  padding: 1rem 1.25rem
+  white-space: pre-line
+  text-align: center
+  line-height: 2.15
+  letter-spacing: 0.06em
+  font-size: 1.0625rem
+  color: var(--tw-prose-headings)
+
+  @media (max-width: 768px)
+    padding: 0.75rem 0
+    font-size: 1rem
+    line-height: 2
