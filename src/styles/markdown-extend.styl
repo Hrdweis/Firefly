@@ -655,3 +655,71 @@ a.card-wiki-link
       min-width: 0
       aspect-ratio: 2 / 1
       align-self: stretch
+
+// ─── 折叠块（<details> / <summary>） ─────────────────────────────────────────
+// 用于「点开看泄底」这类默认收起、点击展开的内容，触屏和键盘都能操作。
+// 帖子（Markdown.astro）与动态（DynamicItemTemplate.astro）共用 .custom-md。
+
+.custom-md details
+  margin: 1.25rem 0
+  padding: 0.75rem 1rem
+  border: 1px solid var(--line-divider)
+  border-radius: var(--radius-large)
+  background: var(--license-block-bg)
+  overflow: hidden
+  transition: border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1)
+
+  &[open]
+    border-color: var(--line-color)
+
+  > summary
+    display: flex
+    align-items: center
+    gap: 0.5rem
+    // 负外边距把标题条撑满整块，收起时看不到多余留白
+    margin: -0.75rem -1rem 0
+    padding: 0.75rem 1rem
+    cursor: pointer
+    font-weight: 600
+    color: var(--tw-prose-headings)
+    list-style: none
+    user-select: none
+    transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1)
+
+    &::-webkit-details-marker
+      display: none
+
+    &::marker
+      content: ''
+
+    &:hover
+      background-color: var(--btn-regular-bg-hover)
+
+    &::before
+      content: ''
+      flex: 0 0 auto
+      display: inline-block
+      width: 1.1em
+      height: 1.1em
+      background-color: currentColor
+      opacity: 0.75
+      mask-size: contain
+      mask-position: center
+      mask-repeat: no-repeat
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9.29 6.71a.996.996 0 0 0 0 1.41L13.17 12l-3.88 3.88a.996.996 0 1 0 1.41 1.41l4.59-4.59a.996.996 0 0 0 0-1.41L10.7 6.7a.996.996 0 0 0-1.41 0Z'/%3E%3C/svg%3E")
+      transform: rotate(0deg)
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+
+  &[open] > summary
+    margin-bottom: 0.75rem
+    border-bottom: 1px solid var(--line-divider)
+
+    &::before
+      transform: rotate(90deg)
+
+  // 收敛首尾间距，避免和标题条之间出现双倍空隙
+  &[open] > summary + *
+    margin-top: 0
+
+  > :last-child
+    margin-bottom: 0
